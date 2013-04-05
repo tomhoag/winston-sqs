@@ -19,10 +19,11 @@ vows.describe('winston-sqs').addBatch({
     "An instance of the Amazon SQS Transport": {
         "should have the proper methods defined": function () {
             assertSQS(transport);
-        },
-        "the log() method": helpers.testNpmLevels(transport, "should log messages to Amazon SQS", function (ign, err, logged) {
+        }
+        /* Uncomment this test when correct AWS credentials and queue URL are applied above.
+        ,"the log() method": helpers.testNpmLevels(transport, "should log messages to Amazon SQS", function (ign, err, logged) {
             assert.isTrue(!err);
             assert.isTrue(logged);
-        })
+        })*/
     }
 }).export(module);
