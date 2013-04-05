@@ -10,7 +10,7 @@
     },
     "keywords": ["winston", "amazon", "sqs", "notification", "logging"],
     "dependencies": {
-        "aws-sdk" : "0.9.7"
+        "aws-sdk" : ">= 0.9.7-pre.8"
     },
     "devDependencies": {
         "winston": "0.4.x",
