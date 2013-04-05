@@ -5,9 +5,9 @@ var helpers = require('winston/test/helpers');
 var SQS = require('../lib/winston-sqs').SQS;
 
 var transport = new (SQS)({
-    aws_queueurl: "https://sqs.us-east-1.amazonaws.com/542212936768/sendbunch_dev_transactions",
-    aws_accesskeyid: "AKIAISWTU67EBWGKUOPA",
-    aws_secretaccesskey: "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"
+    aws_queueurl: "queueurl",
+    aws_accesskeyid: "publickey",
+    aws_secretaccesskey: "secretkey"
 });
 
 function assertSQS (transport) {
