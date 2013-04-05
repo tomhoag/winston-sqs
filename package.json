@@ -1,0 +1,25 @@
+{
+    "name": "winston-sqs",
+    "description": "An Amazon Simple Queue Service Transport for winston (http://www.github.com/flatiron/winston)",
+    "version": "0.1.0",
+    "author": "Alex Gadea <alex.gadea@leaflevellabs.com>",
+    "contributors": [],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/agad/winston-sqs.git"
+    },
+    "keywords": ["winston", "amazon", "sqs", "notification", "logging"],
+    "dependencies": {
+        "aws-sdk" : "0.9.7"
+    },
+    "devDependencies": {
+        "winston": "0.4.x",
+        "vows": "0.5.x"
+    },
+    "main": "lib/winston-sqs.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": { "test": "vows test/*-test.js --spec" },
+    "engines": { "node": ">= 0.8.0" }
+}
