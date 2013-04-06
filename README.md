@@ -1,5 +1,4 @@
-Amazon SQS Transport for [winston][0].
-
+Amazon SQS Transport for [winston][0] [![Build Status](https://api.travis-ci.org/agad/winston-sqs.png)](http://travis-ci.org/agad/winston-sqs)
 ## Installation via npm
 
 ``` sh
