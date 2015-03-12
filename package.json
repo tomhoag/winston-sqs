@@ -10,11 +10,11 @@
     },
     "keywords": ["winston", "amazon", "sqs", "notification", "logging"],
     "dependencies": {
-        "aws-sdk" : ">= 0.9.7-pre.8"
+        "aws-sdk" : "^2.1.16"
     },
     "devDependencies": {
-        "winston": "0.4.x",
-        "vows": "0.5.x"
+        "winston": "^0.9.0",
+        "vows": "0.8.x"
     },
     "main": "lib/winston-sqs.js",
     "directories": {
