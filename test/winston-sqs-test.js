@@ -15,7 +15,27 @@ function assertSQS (transport) {
     assert.isFunction(transport.log);
 }
 
+var allOptions = {
+    aws_queueurl: "queueurl",
+    aws_accesskeyid: "publickey",
+    aws_secretaccesskey: "secretkey"
+};
+
+function without(o, property) { var r = JSON.parse(JSON.stringify(o)); r[property] = undefined; return r; }
+
 vows.describe('winston-sqs').addBatch({
+    "Creation of SQS Transport should fail if a required option is missing": {
+        "queueurl": function (){
+            assert.throws(function() {new (SQS)(without(allOptions, "aws_queueurl"));}, Error);
+        },
+        "accessKeyId (and secretAccessKey) (or credentials)": function (){
+            assert.throws(function() {new (SQS)(without(allOptions, "aws_accesskeyid"));}, Error);
+        },
+        "(accessKeyId and) secretAccessKey (or credentials)": function (){
+            assert.throws(function() {new (SQS)(without(allOptions, "aws_secretaccesskey"));}, Error);
+        }
+
+    },
     "An instance of the Amazon SQS Transport": {
         "should have the proper methods defined": function () {
             assertSQS(transport);
