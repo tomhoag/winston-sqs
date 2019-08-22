@@ -8,9 +8,16 @@
         "type": "git",
         "url": "https://github.com/agad/winston-sqs.git"
     },
-    "keywords": ["winston", "amazon", "sqs", "notification", "logging"],
+    "keywords": [
+        "winston",
+        "amazon",
+        "sqs",
+        "notification",
+        "logging"
+    ],
     "dependencies": {
-        "aws-sdk" : "^2.1.16"
+        "aws-sdk": "^2.1.16",
+        "flatted": "^2.0.1"
     },
     "devDependencies": {
         "winston": "^0.9.0",
@@ -20,6 +27,10 @@
     "directories": {
         "lib": "lib"
     },
-    "scripts": { "test": "vows test/*-test.js --spec" },
-    "engines": { "node": ">= 0.8.0" }
+    "scripts": {
+        "test": "vows test/*-test.js --spec"
+    },
+    "engines": {
+        "node": ">= 0.8.0"
+    }
 }
