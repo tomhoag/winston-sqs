@@ -1,4 +1,5 @@
 # Amazon SQS Transport for Winston [![Build Status](https://api.travis-ci.org/agad/winston-sqs.png)](http://travis-ci.org/agad/winston-sqs)
+Forked from (https://github.com/justin-roncal/winston-sqs)
 ## Installation via npm
 
 ``` sh
