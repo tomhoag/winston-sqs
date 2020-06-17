@@ -1,9 +1,9 @@
-# Amazon SQS Transport for [winston][0] [![Build Status](https://api.travis-ci.org/agad/winston-sqs.png)](http://travis-ci.org/agad/winston-sqs)
+# Amazon SQS Transport for Winston [![Build Status](https://api.travis-ci.org/agad/winston-sqs.png)](http://travis-ci.org/agad/winston-sqs)
 ## Installation via npm
 
 ``` sh
   $ npm install winston
-  $ npm install winston-sqs
+  $ npm install winston-sqs-transport
 ```
 ## Usage
 ``` js
