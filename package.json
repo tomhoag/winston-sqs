@@ -1,8 +1,8 @@
 {
     "name": "winston-sqs-transport",
-    "description": "Fork An Amazon Simple Queue Service Transport for winston (http://www.github.com/flatiron/winston)",
-    "version": "0.0.1",
-    "author": "Alex Gadea <alex.gadea@leaflevellabs.com>",
+    "description": "An Amazon Simple Queue Service Transport for Winston",
+    "version": "0.0.2",
+    "author": "Diego Moreno <diegomjv@gmail.com>",
     "contributors": [],
     "repository": {
         "type": "git",
