@@ -1,19 +1,20 @@
 {
-    "name": "winston-sqs",
-    "description": "An Amazon Simple Queue Service Transport for winston (http://www.github.com/flatiron/winston)",
-    "version": "0.2.0",
+    "name": "winston-sqs-transport",
+    "description": "Fork An Amazon Simple Queue Service Transport for winston (http://www.github.com/flatiron/winston)",
+    "version": "0.0.1",
     "author": "Alex Gadea <alex.gadea@leaflevellabs.com>",
     "contributors": [],
     "repository": {
         "type": "git",
-        "url": "https://github.com/agad/winston-sqs.git"
+        "url": "https://github.com/diegomjv/winston-sqs.git"
     },
     "keywords": [
         "winston",
         "amazon",
         "sqs",
         "notification",
-        "logging"
+        "logging",
+		"transport"
     ],
     "dependencies": {
         "aws-sdk": "^2.1.16",
