@@ -1,7 +1,7 @@
 {
     "name": "winston-sqs-transport",
     "description": "An Amazon Simple Queue Service Transport for Winston",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "author": "Diego Moreno <diegomjv@gmail.com>",
     "contributors": [],
     "repository": {

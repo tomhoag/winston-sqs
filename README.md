@@ -10,24 +10,52 @@ Forked from (https://github.com/justin-roncal/winston-sqs)
 ```
 ## Usage
 ``` js
-const { createLogger } = require('winston');
+const { createLogger, format, transports } = require('winston');
 const { SQSTransport } = require('winston-sqs-transport');
 
-const sqsTransport = new SQSTransport({
-  queueUrl: 'your queueurl',
-  accessKeyId: 'your awsCount',
-  secretAccessKey: 'your awsSecretKey',
-  region: 'your awsRegion'
+const { combine, timestamp, label, printf } = format;
+ 
+const queueUrl = 'your queueUrl';
+const accessKeyId = 'your accessKeyId';
+const secretAccessKey = 'your secretAccessKey';
+const region = 'your region';
+
+const sqsTransport = new SQSTransport({  queueUrl,
+    accessKeyId,
+    secretAccessKey,
+    region
 });
 
-var logger = createLogger({
+const myFormat = printf(({ level, message, timestamp }) => {
+    return `${timestamp} [${level.toUpperCase()}]: ${message}`;
+  });
+ 
+const logger = createLogger({
+    defaultMeta: {
+        application: 'Your App'
+    },
     format: combine(
         timestamp(),
         myFormat
-    ),
+      ),
     transports: [
+        new transports.Console(),
         sqsTransport
     ],
     exitOnError: false
-})
+});
+
+logger.info("Message in SQS AWS");
+
 ```
+In your application console:
+
+2020-06-18T12:46:38.493Z [INFO]: Message in SQS AWS
+
+Message in AWS SQS:
+{
+  message: 'Message in SQS AWS',
+  level: 'info',
+  application: 'Your App',
+  timestamp: '2020-06-18T12:46:38.493Z'
+}
