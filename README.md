@@ -52,10 +52,30 @@ In your application console:
 
 2020-06-18T12:46:38.493Z [INFO]: Message in SQS AWS
 
-Message in AWS SQS:
+In your AWS SQS:
+
 {
   message: 'Message in SQS AWS',
   level: 'info',
   application: 'Your App',
-  timestamp: '2020-06-18T12:46:38.493Z'
+  timestamp: '2020-06-18T12:46:38.493Z',
+  host: 'NBQSP-FC342',
+  env: 'development',
+  pid: '4852'
 }
+
+## Additional options 
+
+debug -> displays the error when sending message
+encodedBase64 -> transform message body in base64
+
+``` js
+const sqsTransport = new SQSTransport({  queueUrl,
+    accessKeyId,
+    secretAccessKey,
+    region,
+	debug : true,
+	encodedBase64 : true
+});
+```
+
