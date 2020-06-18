@@ -1,7 +1,7 @@
 {
     "name": "winston-sqs-transport",
     "description": "An Amazon Simple Queue Service Transport for Winston",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "author": "Diego Moreno <diegomjv@gmail.com>",
     "contributors": [],
     "repository": {
@@ -14,17 +14,17 @@
         "sqs",
         "notification",
         "logging",
-		"transport"
+        "transport"
     ],
     "dependencies": {
-        "aws-sdk": "^2.1.16",
+        "aws-sdk": "^2.592.0",
         "flatted": "^2.0.1"
     },
     "devDependencies": {
-        "winston": "^0.9.0",
+        "winston": "^3.2.1",
         "vows": "0.8.x"
     },
-    "main": "lib/winston-sqs.js",
+    "main": "lib/winston-sqs-transports.js",
     "directories": {
         "lib": "lib"
     },

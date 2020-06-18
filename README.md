@@ -1,5 +1,7 @@
 # Amazon SQS Transport for Winston [![Build Status](https://api.travis-ci.org/agad/winston-sqs.png)](http://travis-ci.org/agad/winston-sqs)
+
 Forked from (https://github.com/justin-roncal/winston-sqs)
+
 ## Installation via npm
 
 ``` sh
@@ -8,23 +10,24 @@ Forked from (https://github.com/justin-roncal/winston-sqs)
 ```
 ## Usage
 ``` js
-var logger = new winston.createLogger({
+const { createLogger } = require('winston');
+const { SQSTransport } = require('winston-sqs-transport');
+
+const sqsTransport = new SQSTransport({
+  queueUrl: 'your queueurl',
+  accessKeyId: 'your awsCount',
+  secretAccessKey: 'your awsSecretKey',
+  region: 'your awsRegion'
+});
+
+var logger = createLogger({
     format: combine(
         timestamp(),
         myFormat
     ),
     transports: [
-        new winston.transports.SQS({
-            queueUrl: '[SQS URL]',
-            region: '[SQS Region]',
-        }),
+        sqsTransport
     ],
     exitOnError: false
 })
-```
-## Setting up format
-``` js
-const myFormat = printf(({ level, message, label, timestamp }) => {
-    return `${timestamp} ${level}: ${message}`;
-});
 ```
