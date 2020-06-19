@@ -12,18 +12,19 @@ Forked from (https://github.com/justin-roncal/winston-sqs)
 ``` js
 const { createLogger, format, transports } = require('winston');
 const { SQSTransport } = require('winston-sqs-transport');
+const { Config } = require('aws-sdk');
 
 const { combine, timestamp, label, printf } = format;
  
 const queueUrl = 'your queueUrl';
-const accessKeyId = 'your accessKeyId';
-const secretAccessKey = 'your secretAccessKey';
-const region = 'your region';
+const sqsOptions = new Config();
+sqsOptions.accessKeyId = 'your accessKeyId';
+sqsOptions.secretAccessKey = 'your secretAccessKey';
+sqsOptions.region = 'your region';
 
-const sqsTransport = new SQSTransport({  queueUrl,
-    accessKeyId,
-    secretAccessKey,
-    region
+const sqsTrans = new SQSTransport({
+  queueUrl: queueUrl,
+  sqsOptions
 });
 
 const myFormat = printf(({ level, message, timestamp }) => {
@@ -53,7 +54,7 @@ In your application console:
 2020-06-18T12:46:38.493Z [INFO]: Message in SQS AWS
 
 In your AWS SQS:
-
+``` js
 {
   message: 'Message in SQS AWS',
   level: 'info',
@@ -63,11 +64,13 @@ In your AWS SQS:
   env: 'development',
   pid: '4852'
 }
+```
 
 ## Additional options 
 
-debug -> displays the error when sending message
-encodedBase64 -> transform message body in base64
+// debug -> displays the error when sending message
+
+// encodedBase64 -> transform message body in base64
 
 ``` js
 const sqsTransport = new SQSTransport({  queueUrl,
