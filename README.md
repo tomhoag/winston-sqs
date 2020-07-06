@@ -68,17 +68,42 @@ In your AWS SQS:
 
 ## Additional options 
 
-// debug -> displays the error when sending message
+debug -> displays the error when sending message
 
-// encodedBase64 -> transform message body in base64
+encodedBase64 -> transform message body in base64
+
+silent in your unit tests -> In config winston 
 
 ``` js
-const sqsTransport = new SQSTransport({  queueUrl,
-    accessKeyId,
-    secretAccessKey,
-    region,
-	debug : true,
-	encodedBase64 : true
+
+const sqsTrans = new SQSTransport({
+  queueUrl: queueUrl,
+  sqsOptions,
+  debug : true,
+  encodedBase64 : true
 });
+
+
+
 ```
 
+silent send message in your unit tests -> In config winston 
+
+``` js
+
+export const logger = createLogger({
+  levels,
+  level: 'error',
+  exitOnError: false,
+  silent: true
+  ....
+  });
+  
+Or 
+In your file test, import your logger and set properties silente for true:
+logger.silent = true;   explicity
+logger.silent = process.env.NODE_ENV == 'test';  by env
+ 
+```
+
+ENJOY!!!
