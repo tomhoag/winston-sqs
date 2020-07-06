@@ -101,7 +101,7 @@ export const logger = createLogger({
   
 Or 
 In your file test, import your logger and set properties silente for true:
-logger.silent = true;   explicity
+logger.silent = true;   explicitly
 logger.silent = process.env.NODE_ENV == 'test';  by env
  
 ```
